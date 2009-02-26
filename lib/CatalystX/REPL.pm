@@ -1,5 +1,5 @@
 package CatalystX::REPL;
-# read-eval-print-loop for debugging your Catalyst application
+# ABSTRACT: read-eval-print-loop for debugging your Catalyst application
 
 use Moose::Role;
 use Carp::REPL ();
