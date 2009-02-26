@@ -30,7 +30,7 @@ mode and the C<CATALYST_REPL> or C<MYAPP_REPL> environment variabeles are set.
 after setup_finalize => sub {
     my ($self) = @_;
     $SIG{__DIE__} = \&Carp::REPL::repl
-        if $self->debug && Catalyst::Utils::env_value($self, 'repl');
+        if Catalyst::Utils::env_value($self, 'repl');
 };
 
 1;
