@@ -22,8 +22,13 @@ use namespace::clean -except => 'meta';
 
 =head1 DESCRIPTION
 
-This role automatically sets up Carp::REPL after starting your application, if
-the C<CATALYST_REPL> or C<MYAPP_REPL> environment variabeles are set.
+Using Carp::REPL with a Catalyst application is hard. That's because of all the
+internal exceptions that are being thrown and catched by Catalyst during
+application startup. You'd have to manually skip over all of those.
+
+This role works that around by automatically setting up Carp::REPL after
+starting your application, if the C<CATALYST_REPL> or C<MYAPP_REPL> environment
+variabeles are set.
 
 =cut
 
