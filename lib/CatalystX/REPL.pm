@@ -58,8 +58,6 @@ L<Carp::REPL>
 
 L<Devel::REPL>
 
-L<Devel::REPL::Plugin>
-
 =cut
 
 after setup_finalize => sub {
