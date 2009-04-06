@@ -28,7 +28,7 @@ application startup. You'd have to manually skip over all of those.
 
 This role works around that by automatically setting up Carp::REPL after
 starting your application, if the C<CATALYST_REPL> or C<MYAPP_REPL> environment
-variabeles are set.
+variables are set.
 
 =cut
 
