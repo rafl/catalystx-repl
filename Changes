@@ -1,3 +1,6 @@
+0.03  Fri, 10 Apr 2009 01:47:22 +0200
+  * Allow passing options to Carp::REPL.
+
 0.02  Mon, 06 Apr 2009 22:28:52 +0100
   * Doc improvmens (Ash Berlin, spurned on by Jon Rockway)
 
