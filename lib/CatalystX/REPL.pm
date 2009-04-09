@@ -62,8 +62,9 @@ L<Devel::REPL>
 
 after setup_finalize => sub {
     my ($self) = @_;
-    $SIG{__DIE__} = \&Carp::REPL::repl
-        if Catalyst::Utils::env_value($self, 'repl');
+    if (my $repl_options = Catalyst::Utils::env_value($self, 'repl')) {
+        Carp::REPL->import(split q{,}, $repl_options);
+    }
 };
 
 1;
