@@ -45,13 +45,13 @@ variables are set:
 
  $ $c
  MyApp=HASH(0xcea6ec)
- $ $c->req->uri          
+ $ $c->req->uri
  http://localhost/foo/bar
- $ 
+ $
 
 Carp::REPL uses L<Devel::REPL> for the shell, so direct any questions how how
 to use or customize the repl at that module.
- 
+
 =head1 SEE ALSO
 
 L<Carp::REPL>
