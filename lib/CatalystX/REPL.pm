@@ -49,6 +49,11 @@ variables are set:
  http://localhost/foo/bar
  $
 
+Options like C<warn> or C<nodie> can be passed to Carp::REPL by putting them,
+seperated by commas, into the environment variable:
+
+ MYAPP_REPL=warn,nodie ./script/myapp_server.pl
+
 Carp::REPL uses L<Devel::REPL> for the shell, so direct any questions how how
 to use or customize the repl at that module.
 
