@@ -65,7 +65,18 @@ L<Devel::REPL>
 
 =cut
 
-after setup_finalize => sub {
+# Normally we'd hook into setup_finalize, but unfortunately for us Class::MOP
+# localizes $SIG{__DIE__}, which Carp::REPL relies on, during load_class. That
+# way the die handler will only be set up between between finishing setup and
+# until after the run time of MyApp.pm ends, when MyApp is loaded with
+# load_class, which it often is, for example in Catalyst::Test. Because of that
+# we hook in at the start of each request and install our handler. This isn't
+# too bad. After all, we're a debugging only tool. We could play some tricks to
+# do this only once, before the first request and avoid reinstalling the
+# handler on every subsequent request, but given we're a role, and we don't
+# have a MyApp instance to store attributes in, we don't even try.
+
+before prepare => sub {
     my ($self) = @_;
     if (my $repl_options = Catalyst::Utils::env_value($self, 'repl')) {
         Carp::REPL->import(split q{,}, $repl_options);
