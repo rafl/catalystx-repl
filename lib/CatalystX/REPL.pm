@@ -5,7 +5,7 @@ use Moose::Role;
 use Carp::REPL ();
 use Catalyst::Utils;
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 =head1 SYNOPSIS
 
